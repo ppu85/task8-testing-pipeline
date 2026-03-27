@@ -1,0 +1,29 @@
+name: Node.js CI & Coveralls
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Koodin haku (Checkout)
+      uses: actions/checkout@v4
+
+    - name: Asennetaan Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22.x'
+
+    - name: Asennetaan paketit (Dependencies)
+      run: npm install
+
+    - name: Ajetaan testit ja mitataan kattavuus
+      run: npm run coverage
+
+    - name: Lähetetään raportti Coveralls-palveluun
+      uses: coverallsapp/github-action@v2
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
