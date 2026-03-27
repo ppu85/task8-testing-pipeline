@@ -1,3 +1,7 @@
+# Ohjelmistotestauksen Harjoitustyö - Task 8
+
+[![Coverage Status](https://coveralls.io/repos/github/ppu85/task8-testing-pipeline/badge.svg?branch=main)](https://coveralls.io/github/ppu85/task8-testing-pipeline?branch=main)
+
 # Student template
 
 ## Purpose of this repository
